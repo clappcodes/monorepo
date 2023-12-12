@@ -1,15 +1,17 @@
 {
-	"exclude": ["node_modules", "lib"],
+	"exclude": ["./node_modules", "./packages/*/lib", "./.git"],
 	"compilerOptions": {
-		"target": "ES2015",
-		"module": "commonjs",
+		"target": "ES2022",
+		"module": "CommonJS",
 		"strict": true,
 		"esModuleInterop": true,
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
 		"declaration": true,
+		"emitDeclarationOnly": true,
+		"declarationMap": true,
 		"paths": {
-			"@acme/*": ["./packages/*/"]
+			"@acme/*": ["./packages/*"]
 		}
 	}
 }

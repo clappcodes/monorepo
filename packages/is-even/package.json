@@ -4,12 +4,13 @@
   "types": "./lib/index.d.ts",
   "description": "Demo package to test out scoped publishing using workspaces.",
   "main": "./lib/index.js",
+  "typings": "lib/index.d.ts",
   "scripts": {
-    "build:dts": "tsc --emitDeclarationOnly -p tsconfig.pkg.json",
-    "build:js": "esbuild ./src/*.ts ./src/**/*.ts --platform=node --format=cjs --outdir=./lib --tsconfig=./tsconfig.pkg.json",
-    "watch": "rm -rf lib/* && npm run build:dts && npm run build:js -- --watch",
-    "build": "rm -rf lib/* && npm run build:dts && npm run build:js",
-    "dev": "npm-run-all --parallel \"build:* -- --watch\""
+    "build:dts": "tsc --emitDeclarationOnly -p ./tsconfig.pkg.json",
+    "build:js": "esbuild ./src/**.ts --sourcemap=inline --sources-content --platform=node --format=cjs --outdir=./lib --tsconfig=./tsconfig.pkg.json",
+    "clean": "rm -rf lib/*",
+    "build": "npm-run-all clean build:*",
+    "dev": "npm-run-all clean --parallel --aggregate-output \"build:* -- --watch\""
   },
   "author": "",
   "license": "ISC",

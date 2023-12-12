@@ -3,9 +3,5 @@
 	"compilerOptions": {
 		"baseUrl": "./"
 	},
-	"include": [
-		"./packages/*/**.ts",
-		"packages/is-even/src/index.ts",
-		"packages/is-odd/src/index.ts"
-	]
+	"include": ["./packages/*/src/**.ts"]
 }
