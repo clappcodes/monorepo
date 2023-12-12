@@ -1,5 +1,5 @@
-import { isEven } from '@acme-corp/is-even';
+import { isEven } from "@acme/is-even";
 
 export function isOdd(i: number): boolean {
-    return isEven(i) === false;
+	return isEven(i) === false;
 }

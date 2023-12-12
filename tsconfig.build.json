@@ -1,20 +1,15 @@
 {
-    "exclude": [
-        "**/*.test.ts",
-        "**/*.stub.ts",
-        "node_modules",
-        "dist"
-    ],
-    "compilerOptions": {
-        "target": "ES2015",
-        "module": "commonjs",
-        "strict": true,
-        "esModuleInterop": true,
-        "skipLibCheck": true,
-        "forceConsistentCasingInFileNames": true,
-        "declaration": true,
-        "paths": {
-            "@acme-crp/*": ["./packages/*/"]
-        }
-    }
+	"exclude": ["node_modules", "lib"],
+	"compilerOptions": {
+		"target": "ES2015",
+		"module": "commonjs",
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"declaration": true,
+		"paths": {
+			"@acme/*": ["./packages/*/"]
+		}
+	}
 }

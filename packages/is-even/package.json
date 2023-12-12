@@ -1,11 +1,11 @@
 {
-  "name": "@acme-corp/is-even",
+  "name": "@acme/is-even",
   "version": "0.0.2",
-  "types": "dist/index.d.ts",
+  "types": "lib/index.d.ts",
   "description": "",
-  "main": "dist/index.js",
+  "main": "lib/index.js",
   "scripts": {
-    "compile": "rm -rf dist/* && tsc -p tsconfig.pkg.json"
+    "compile": "rm -rf lib/* && tsc -p tsconfig.pkg.json"
   },
   "author": "",
   "license": "ISC"
