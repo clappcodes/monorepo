@@ -8,7 +8,8 @@
     "build:dts": "tsc --emitDeclarationOnly -p tsconfig.pkg.json",
     "build:js": "esbuild ./src/*.ts ./src/**/*.ts --platform=node --format=cjs --outdir=./lib --tsconfig=./tsconfig.pkg.json",
     "watch": "rm -rf lib/* && npm run build:dts && npm run build:js -- --watch",
-    "build": "rm -rf lib/* && npm run build:dts && npm run build:js"
+    "build": "rm -rf lib/* && npm run build:dts && npm run build:js",
+    "dev": "npm-run-all --parallel \"build:* -- --watch\""
   },
   "author": "",
   "license": "ISC",
