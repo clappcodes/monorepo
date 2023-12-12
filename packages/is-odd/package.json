@@ -1,15 +1,22 @@
 {
   "name": "@acme/is-odd",
   "version": "0.0.2",
-  "description": "",
-  "main": "lib/index.js",
-  "types": "lib/index.d.ts",
+  "description": "Demo package to test out scoped publishing using workspaces.",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "scripts": {
-    "compile": "rm -rf lib/* && tsc -p tsconfig.pkg.json"
+    "build:dts": "tsc --emitDeclarationOnly -p tsconfig.pkg.json",
+    "build:js": "esbuild ./src/*.ts ./src/**/*.ts --platform=node --format=cjs --outdir=./lib --tsconfig=./tsconfig.pkg.json",
+    "watch": "rm -rf lib/* && npm run build:dts && npm run build:js -- --watch",
+    "build": "rm -rf lib/* && npm run build:dts && npm run build:js"
   },
   "author": "",
   "license": "ISC",
+  "directories": {
+    "lib": "lib"
+  },
+  "keywords": [],
   "dependencies": {
-    "@acme/is-even": "^0.0.1"
+    "@acme/is-even": "^0.0.2"
   }
 }

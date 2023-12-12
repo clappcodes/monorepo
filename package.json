@@ -1,6 +1,9 @@
 {
   "private": true,
-  "scripts": {},
+  "scripts": {
+    "build": "npm run build -ws",
+    "watch": "npm run watch -ws"
+  },
   "workspaces": [
     "./packages/*"
   ],

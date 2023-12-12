@@ -1,9 +1,11 @@
 {
-    "extends": "./tsconfig.build.json",
-    "compilerOptions": {
-        "baseUrl": "./"
-    },
-    "include": [
-        "./packages/*/**.ts"
-    ]
+	"extends": "./tsconfig.build.json",
+	"compilerOptions": {
+		"baseUrl": "./"
+	},
+	"include": [
+		"./packages/*/**.ts",
+		"packages/is-even/src/index.ts",
+		"packages/is-odd/src/index.ts"
+	]
 }
